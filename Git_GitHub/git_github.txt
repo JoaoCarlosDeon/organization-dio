@@ -1,0 +1,59 @@
+
+
+
+/////////////////////////CONFIGURAÇÃO
+
+
+(cadastra a senha ssh do git para acesso deste computador)
+
+➜ apt install mssh 
+(para ler o diretório .ssh e acessar a chave pública .pub e inserir no git (ACESSO A CRIAÇÃO SE SSH/KEYGEN))
+
+ATIVAR A CHAVE
+➜ eval $(ssh-agent -s)
+Agent pid numeroGerado 
+
+ATIVAR A CHAVE PRIVADA
+➜ ssh-add id_Numero_Da_Chave_Privada(sem o .pub)
+
+/////////////////////////CONFIGURANDO USUÁRIO GLOBAL
+
+➜ git config – –global user.email <email>
+➜ git config – –global user.name <nome_user>
+
+➜ git config – – li 
+(Lista as infos cadastradas)
+
+(Seta o autor / email)
+➜ git config – –global unset user.name
+➜ git config – –global unset user.email 
+➜ git config – – li 
+(Listando verá que o usuário e email não estão mais na lista. Cadastre ou edite usuário)
+
+/////////////////////////COMANDOS
+
+➜ git init 
+(Inicia o repositório)
+
+➜ git add . 
+➜ git add * 
+➜ git add nomeArquivo
+(coloca o arquivo no stage tando unmodified ou modified)
+
+➜ git commit  -m “Commit inicial”
+➜ git status
+
+////RESTAURAR O STAGE (to unstage)
+➜ git restore --staged <file>
+
+////SUBINDO O REPOSITÓRIO
+
+➜ git remote add origin <endereçodogit>
+➜ git remote –v
+➜ git status (verifica se nao tem nada no stage)
+➜ git push origin master
+////PUXANDO O REPOSITÓRIO DO GITHUB PARA A MÁQUINA E SINCRONIZAR / RESOLVENDO ERRO
+
+➜ git pull origin master
+(puxa o conteúdo do github)
+Mexe no erro 
